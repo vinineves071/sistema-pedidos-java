@@ -51,7 +51,20 @@ public class hamburgueria {
          
       
       System.out.println("quantas unidades? ");
-      int quantidade = ler.nextInt();
+      int quantidade = 0;
+      try {quantidade=ler.nextint();
+        }  catch (ImputMisMatchException e) {
+          Systen.out.println("digite um numero valido!)
+           ler.nextLine();
+          continue;
+           }
+
+      if (quantidade <= 0) {
+          System.out.println("quantidade invalida");
+          ler.nextLine();
+          continue;
+           }
+     
       double total = CalcularPedido(preco, quantidade);
 
       System.out.println("voce escolheu: " + produto + quantidade);
